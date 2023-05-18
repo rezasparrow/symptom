@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface SymptomService {
     void addAll(List<SymptomDto> symptoms);
+    List<SymptomDto> findAll();
+    SymptomDto findByCode(String code);
+    void deleteAll();
 }
