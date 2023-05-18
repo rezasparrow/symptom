@@ -2,6 +2,7 @@ package com.rezasparrow.symptom.dto;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
@@ -10,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @ToString
-public class SymptomDto {
+public class SymptomDto implements Serializable {
     private String source;
     private String codeListCode;
     private String code;

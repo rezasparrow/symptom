@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="add save all symptom service">
+    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="add findByCode and deleteAll service">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/controller/SymptomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/TestUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/controller/SymptomControllerIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/controller/TestH2SymptomRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application-integrationtest.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/exercise.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/service/symptom/SymptomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/service/symptom/SymptomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/service/symptom/SymptomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/service/symptom/SymptomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/dto/SymptomDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/dto/SymptomDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/service/symptom/SymptomServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/service/symptom/SymptomServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -53,6 +59,9 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "D:/java/symptom/symptom/src/test/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,7 +70,36 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.SymptomServiceImplTest">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\symptom\symptom\src\test\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.rezasparrow.symptom.controller" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.rezasparrow.symptom.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.SymptomControllerIntegrationTest">
+    <configuration name="SymptomControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="symptom" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rezasparrow.symptom.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rezasparrow.symptom.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.rezasparrow.symptom.controller.SymptomControllerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SymptomServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="symptom" />
       <extension name="coverage">
@@ -100,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SymptomControllerIntegrationTest" />
         <item itemvalue="JUnit.SymptomServiceImplTest" />
         <item itemvalue="JUnit.com.rezasparrow.symptom.service.symptom in symptom" />
       </list>
@@ -113,7 +152,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684392172752</updated>
-      <workItem from="1684392173846" duration="3106000" />
+      <workItem from="1684392173846" duration="4330000" />
     </task>
     <task id="LOCAL-00001" summary="add save all symptom service">
       <created>1684394218257</created>
@@ -136,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684394376724</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add findByCode and deleteAll service">
+      <created>1684395375330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684395375330</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +190,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add save all symptom service" />
-    <option name="LAST_COMMIT_MESSAGE" value="add save all symptom service" />
+    <MESSAGE value="add findByCode and deleteAll service" />
+    <option name="LAST_COMMIT_MESSAGE" value="add findByCode and deleteAll service" />
   </component>
 </project>

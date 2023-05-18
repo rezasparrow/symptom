@@ -1,7 +1,7 @@
 package com.rezasparrow.symptom.service.symptom;
 
 import com.rezasparrow.symptom.DataGenerator;
-import com.rezasparrow.symptom.dto.SymptomDto;
+import com.rezasparrow.symptom.TestUtils;
 import com.rezasparrow.symptom.exceptions.DuplicateSymptomException;
 import com.rezasparrow.symptom.model.Symptom;
 import com.rezasparrow.symptom.repository.SymptomRepository;
@@ -12,12 +12,11 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.internal.verification.VerificationModeFactory;
 
-import java.text.SimpleDateFormat;
-import java.util.Comparator;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
 
+import static com.rezasparrow.symptom.TestUtils.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
@@ -25,7 +24,6 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
 public class SymptomServiceImplTest {
-    private final static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     @Mock
     private SymptomRepository repository;
     private SymptomServiceImpl service;
@@ -104,41 +102,4 @@ public class SymptomServiceImplTest {
                 .deleteAll();
     }
 
-    public static void assertSymptomMap(Iterable<Symptom> symptoms, Iterable<SymptomDto> dtos) {
-        var sortedDbSymptoms = StreamSupport.stream(symptoms.spliterator(), false)
-                .sorted(Comparator.comparing(Symptom::getCode))
-                .toList();
-        var sortedRetrievedSymptoms = StreamSupport.stream(dtos.spliterator(), false)
-                .sorted(Comparator.comparing(SymptomDto::getCode))
-                .toList();
-        assertThat(sortedDbSymptoms.size()).isEqualTo(sortedRetrievedSymptoms.size());
-        for (int i = 0; i < sortedDbSymptoms.size(); i++) {
-            var dto = sortedRetrievedSymptoms.get(i);
-            var symptom = sortedDbSymptoms.get(i);
-            assertSymptomMap(symptom, dto);
-        }
-    }
-
-    public static void assertSymptomMap(Symptom symptom, SymptomDto dto) {
-        assertField("Code", symptom.getCode(), dto.getCode());
-        assertField("CodeListCode", symptom.getCodeListCode(), dto.getCodeListCode());
-        assertField("LongDescription", symptom.getLongDescription(), dto.getLongDescription());
-        assertField("Source", symptom.getSource(), dto.getSource());
-        assertField("DisplayValue", symptom.getDisplayValue(), dto.getDisplayValue());
-        assertField("SortingPriority", symptom.getSortingPriority(), dto.getSortingPriority());
-
-        assertThat(dateFormat.format(symptom.getToDate()))
-                .isEqualTo(dateFormat.format(dto.getToDate()));
-
-        assertThat(dateFormat.format(symptom.getFromDate()))
-                .isEqualTo(dateFormat.format(dto.getFromDate()));
-    }
-
-
-    private static void assertField(String fieldName, String actual, String expected) {
-
-        assertThat(actual)
-                .as("%s should be %s but is %s", fieldName, expected, actual)
-                .isEqualTo(expected);
-    }
 }
