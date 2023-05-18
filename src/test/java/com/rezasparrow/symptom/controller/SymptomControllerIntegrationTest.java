@@ -5,6 +5,7 @@ import com.rezasparrow.symptom.DataGenerator;
 import com.rezasparrow.symptom.SymptomApplication;
 import com.rezasparrow.symptom.TestUtils;
 import com.rezasparrow.symptom.dto.SymptomDto;
+import com.rezasparrow.symptom.exceptions.ErrorMessage;
 import com.rezasparrow.symptom.model.Symptom;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -103,7 +104,7 @@ class SymptomControllerIntegrationTest {
         MockMultipartFile file = new MockMultipartFile("file", csvData);
 
         mockMvc.perform(multipart(baseUrl + "/").file(file))
-                .andExpect(status().isNoContent());
+                .andExpect(status().isAccepted());
 
         Iterable<Symptom> symptoms = testRepository.findAll();
 
@@ -123,6 +124,32 @@ class SymptomControllerIntegrationTest {
         assertThat(symptom.getSortingPriority()).isEqualTo("1");
     }
 
+    @Test
+    void uploadFile_duplicateCode_shouldUploadFile() throws Exception {
+        testRepository.deleteAll();
+        var csvData = getClass().getResourceAsStream("/duplicate_code.csv");
+        MockMultipartFile file = new MockMultipartFile("file", csvData);
+
+        var resultContent = mockMvc.perform(multipart(baseUrl + "/").file(file))
+                .andExpect(status().isBadRequest())
+                .andReturn()
+                .getResponse()
+                .getContentAsString();
+
+
+        var mapper = new ObjectMapper();
+        var message = mapper.readValue(resultContent, ErrorMessage.class);
+
+        assertThat(message.getMessage()).isEqualTo("Duplicate symptom with code = 271636001");
+    }
+
+    @Test
+    void findByCode_ItemNotExist_ReturnStatusCodeNotFound() throws Exception {
+        var code = "NotExistCode";
+        mockMvc.perform(get(baseUrl + "/" + code))
+                .andExpect(status().isNotFound())
+                .andReturn();
+    }
 
     @AfterEach
     public void cleanTest() {

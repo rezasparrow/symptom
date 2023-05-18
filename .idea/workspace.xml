@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="add upload file service">
+    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="remove some external imports">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/exceptions/ErrorMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/exceptions/ExceptionTranslator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/duplicate_code.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/controller/SymptomCsvHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/controller/SymptomCsvHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/controller/SymptomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/controller/SymptomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/controller/SymptomControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/controller/SymptomControllerIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/service/symptom/SymptomServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom/service/symptom/SymptomServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -79,7 +85,7 @@
       <recent name="com.rezasparrow.symptom.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SymptomControllerIntegrationTest">
+  <component name="RunManager" selected="JUnit.symptom in symptom">
     <configuration name="SymptomControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="symptom" />
       <extension name="coverage">
@@ -91,6 +97,22 @@
       <option name="PACKAGE_NAME" value="com.rezasparrow.symptom.controller" />
       <option name="MAIN_CLASS_NAME" value="com.rezasparrow.symptom.controller.SymptomControllerIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SymptomControllerIntegrationTest.uploadFile_duplicateCode_shouldUploadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="symptom" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rezasparrow.symptom.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rezasparrow.symptom.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.rezasparrow.symptom.controller.SymptomControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="uploadFile_duplicateCode_shouldUploadFile" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,6 +146,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="symptom in symptom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="symptom" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/rezasparrow/symptom" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SymptomApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="symptom" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rezasparrow.symptom.SymptomApplication" />
@@ -133,7 +163,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.symptom in symptom" />
         <item itemvalue="JUnit.SymptomControllerIntegrationTest" />
+        <item itemvalue="JUnit.SymptomControllerIntegrationTest.uploadFile_duplicateCode_shouldUploadFile" />
         <item itemvalue="JUnit.SymptomServiceImplTest" />
         <item itemvalue="JUnit.com.rezasparrow.symptom.service.symptom in symptom" />
       </list>
@@ -147,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684392172752</updated>
-      <workItem from="1684392173846" duration="5129000" />
+      <workItem from="1684392173846" duration="5758000" />
     </task>
     <task id="LOCAL-00001" summary="add save all symptom service">
       <created>1684394218257</created>
@@ -191,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684397237917</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="remove some external imports">
+      <created>1684397318940</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684397318940</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +241,7 @@
     <MESSAGE value="add findByCode and deleteAll service" />
     <MESSAGE value="add findAll,fetchByCode,deleteAll rest service" />
     <MESSAGE value="add upload file service" />
-    <option name="LAST_COMMIT_MESSAGE" value="add upload file service" />
+    <MESSAGE value="remove some external imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove some external imports" />
   </component>
 </project>

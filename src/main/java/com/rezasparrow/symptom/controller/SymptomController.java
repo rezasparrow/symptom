@@ -39,7 +39,7 @@ public class SymptomController {
         service.deleteAll();
     }
     @PostMapping(value = "/")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public void uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
         List<SymptomDto> dtos = SymptomCsvHelper.readData(file.getInputStream());
         service.addAll(dtos);
