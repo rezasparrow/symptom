@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestUtils {
 
-    private final static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    public final static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     public static void assertSymptomMap(Iterable<Symptom> symptoms, Iterable<SymptomDto> dtos) {
         var sortedDbSymptoms = StreamSupport.stream(symptoms.spliterator(), false)

@@ -28,6 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.StreamSupport;
 
 import static com.rezasparrow.symptom.TestUtils.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -51,6 +52,7 @@ class SymptomControllerIntegrationTest {
     private TestH2SymptomRepository testRepository;
     private List<Symptom> symptoms;
     private final String baseUrl = "/api/v1/symptoms";
+
     @BeforeEach
     public void beforeEach() {
         symptoms = DataGenerator.symptoms(10);
@@ -60,7 +62,7 @@ class SymptomControllerIntegrationTest {
     @Test
     void getRequest_ShouldReturnAllSymptoms() throws Exception {
         MvcResult result = mockMvc.perform(
-                        get(baseUrl+"/")
+                        get(baseUrl + "/")
                 )
                 .andExpect(status().isOk())
                 .andReturn();
@@ -79,7 +81,7 @@ class SymptomControllerIntegrationTest {
         var symptom = symptoms.get(0);
         var code = symptom.getCode();
         MvcResult result = mockMvc.perform(
-                        get(baseUrl+"/" + code)
+                        get(baseUrl + "/" + code)
                 )
                 .andExpect(status().isOk())
                 .andReturn();
@@ -94,7 +96,7 @@ class SymptomControllerIntegrationTest {
 
     @Test
     void shouldDeleteAllData() throws Exception {
-        mockMvc.perform(delete(baseUrl+"/"))
+        mockMvc.perform(delete(baseUrl + "/"))
                 .andExpect(status().isAccepted())
                 .andReturn();
 
@@ -102,9 +104,36 @@ class SymptomControllerIntegrationTest {
         assertThat(dbSymptoms).isEmpty();
     }
 
-    @AfterEach
-    public void cleanTest(){
+    @Test
+    void uploadFile_shouldUploadFile() throws Exception {
         testRepository.deleteAll();
+        var csvData = getClass().getResourceAsStream("/exercise.csv");
+        MockMultipartFile file = new MockMultipartFile("file", csvData);
+
+        mockMvc.perform(multipart(baseUrl + "/").file(file))
+                .andExpect(status().isNoContent());
+
+        Iterable<Symptom> symptoms = testRepository.findAll();
+
+        assertThat(symptoms).hasSize(18);
+        var symptom = StreamSupport.stream(symptoms.spliterator(), false)
+                .filter(x -> x.getCode().equals("271636001"))
+                .findFirst()
+                .orElseThrow();
+
+        assertThat(symptom.getSource()).isEqualTo("ZIB");
+        assertThat(symptom.getCodeListCode()).isEqualTo("ZIB001");
+        assertThat(symptom.getDisplayValue()).isEqualTo("Polsslag regelmatig");
+        assertThat(symptom.getSource()).isEqualTo("ZIB");
+        assertThat(symptom.getLongDescription()).isEqualTo("The long description is necessary");
+        assertThat(TestUtils.dateFormat.format(symptom.getFromDate())).isEqualTo("01-01-2019");
+        assertThat(symptom.getToDate()).isNull();
+        assertThat(symptom.getSortingPriority()).isEqualTo("1");
     }
 
+
+    @AfterEach
+    public void cleanTest() {
+        testRepository.deleteAll();
+    }
 }
