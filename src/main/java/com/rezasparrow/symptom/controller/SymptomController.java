@@ -2,6 +2,7 @@ package com.rezasparrow.symptom.controller;
 
 import com.rezasparrow.symptom.dto.SymptomDto;
 import com.rezasparrow.symptom.service.symptom.SymptomService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,11 +24,13 @@ public class SymptomController {
 
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
+    @Operation(summary = "Get all symptoms")
     public List<SymptomDto> getAll() {
         return service.findAll();
     }
 
     @GetMapping(value = "/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Get symptom by code")
     @ResponseStatus(HttpStatus.OK)
     public SymptomDto getAll(@PathVariable("code") String code) {
         return service.findByCode(code);
@@ -35,6 +38,7 @@ public class SymptomController {
 
     @DeleteMapping(value = "/")
     @ResponseStatus(HttpStatus.ACCEPTED)
+    @Operation(summary = "Delete all symptoms")
     public void deleteAll() {
         service.deleteAll();
     }
