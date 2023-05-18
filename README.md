@@ -1,1 +1,1 @@
-# symptom
+# Symptom
