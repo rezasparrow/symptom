@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="add documentation for project">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-    </list>
+    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="fix documents and add dockerignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +80,7 @@
       <recent name="com.rezasparrow.symptom.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SymptomApplication">
+  <component name="RunManager" selected="JUnit.java in symptom">
     <configuration name="SymptomControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="symptom" />
       <extension name="coverage">
@@ -132,16 +127,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.rezasparrow.symptom.service.symptom in symptom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in symptom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="symptom" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.rezasparrow.symptom.service.symptom.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.rezasparrow.symptom.service.symptom" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in symptom" />
         <item itemvalue="JUnit.symptom in symptom" />
         <item itemvalue="JUnit.SymptomControllerIntegrationTest" />
         <item itemvalue="JUnit.SymptomControllerIntegrationTest.uploadFile_duplicateCode_shouldUploadFile" />
         <item itemvalue="JUnit.SymptomServiceImplTest" />
-        <item itemvalue="JUnit.com.rezasparrow.symptom.service.symptom in symptom" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +168,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684392172752</updated>
-      <workItem from="1684392173846" duration="7683000" />
+      <workItem from="1684392173846" duration="7796000" />
     </task>
     <task id="LOCAL-00001" summary="add save all symptom service">
       <created>1684394218257</created>
@@ -251,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684399408748</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix documents and add dockerignore">
+      <created>1684399892034</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684399892034</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +262,7 @@
     <MESSAGE value="add error handling" />
     <MESSAGE value="add OpenApi Swagger for api documentation" />
     <MESSAGE value="add documentation for project" />
-    <option name="LAST_COMMIT_MESSAGE" value="add documentation for project" />
+    <MESSAGE value="fix documents and add dockerignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix documents and add dockerignore" />
   </component>
 </project>

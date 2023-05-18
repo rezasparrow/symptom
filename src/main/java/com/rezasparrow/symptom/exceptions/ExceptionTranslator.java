@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 public class ExceptionTranslator {
 
     @ExceptionHandler(NoSuchElementException.class)
-    public ResponseEntity<ErrorMessage> handleNoSuchElementException(NoSuchElementException exception){
+    public ResponseEntity<ErrorMessage> handleNoSuchElementException(){
         ResponseEntity.BodyBuilder builder =ResponseEntity.status(HttpStatus.NOT_FOUND);
         var error = new ErrorMessage("Item not found");
         return builder.body(error);
