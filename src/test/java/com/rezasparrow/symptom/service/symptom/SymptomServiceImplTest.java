@@ -1,7 +1,6 @@
 package com.rezasparrow.symptom.service.symptom;
 
 import com.rezasparrow.symptom.DataGenerator;
-import com.rezasparrow.symptom.TestUtils;
 import com.rezasparrow.symptom.exceptions.DuplicateSymptomException;
 import com.rezasparrow.symptom.model.Symptom;
 import com.rezasparrow.symptom.repository.SymptomRepository;
@@ -16,7 +15,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
 
-import static com.rezasparrow.symptom.TestUtils.*;
+import static com.rezasparrow.symptom.TestUtils.assertSymptomMap;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;

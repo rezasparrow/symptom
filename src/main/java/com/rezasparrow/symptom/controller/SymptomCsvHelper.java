@@ -11,18 +11,17 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 class SymptomCsvHelper {
-    private static DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+    private final static DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
     public static List<SymptomDto> readData(InputStream stream) throws IOException {
         var mapper = new CsvMapper();
         mapper.setDateFormat(format);
 
-        var res = mapper.readerFor(SymptomDto.class)
+        return mapper.readerFor(SymptomDto.class)
                 .with(CsvSchema.emptySchema().withHeader())
                 .readValues(stream)
                 .readAll()
                 .stream()
                 .map(x -> (SymptomDto) x)
                 .toList();
-        return res;
     }
 }
