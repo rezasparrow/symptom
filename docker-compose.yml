@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  symptom.service:
+    container_name: com.rezasparrow.symptom
+    image: symptom
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080

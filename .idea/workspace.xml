@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="add error handling">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/configuration/OpenApiConfiguration.java" afterDir="false" />
+    <list default="true" id="38baba03-18b3-4a30-9435-ec327dcde557" name="Changes" comment="add OpenApi Swagger for api documentation">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/controller/SymptomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rezasparrow/symptom/controller/SymptomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,17 +62,19 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "D:/java/symptom/symptom/src/test/resources",
+    "last_opened_file_path": "D:/java/symptom/symptom",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propCompiler",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\symptom\symptom" />
       <recent name="D:\java\symptom\symptom\src\test\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -177,7 +181,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684392172752</updated>
-      <workItem from="1684392173846" duration="5951000" />
+      <workItem from="1684392173846" duration="7219000" />
     </task>
     <task id="LOCAL-00001" summary="add save all symptom service">
       <created>1684394218257</created>
@@ -235,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684397977910</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add OpenApi Swagger for api documentation">
+      <created>1684398232018</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684398232018</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +259,7 @@
     <MESSAGE value="add upload file service" />
     <MESSAGE value="remove some external imports" />
     <MESSAGE value="add error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="add error handling" />
+    <MESSAGE value="add OpenApi Swagger for api documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add OpenApi Swagger for api documentation" />
   </component>
 </project>
